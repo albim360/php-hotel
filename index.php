@@ -53,6 +53,13 @@ $hotels = [
 </head>
 
 <body>
+    <form action="./index.php" method="GET">
+        <select name="parking">
+            <option value="true">Con Parcheggio</option>
+            <option value="false">Senza Parcheggio</option>
+        </select>
+        <input type="submit" value="Filtra" >
+    </form>
     <div class="container">
         <table class="table">
             <thead class="thead-dark">
