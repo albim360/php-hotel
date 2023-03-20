@@ -39,8 +39,6 @@ $hotels = [
     ],
 
 ];
-var_dump($hotels);
-
 ?>
 
 <!DOCTYPE html>
@@ -55,42 +53,48 @@ var_dump($hotels);
 </head>
 
 <body>
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Descrizione</th>
-                <th scope="col">Parcheggio</th>
-                <th scope="col">Voto</th>
-                <th scope="col">Distanza dal centro</th>
-            </tr>
-        </thead>
-        <?php foreach ($hotels as $hotel) { ?>
-            <tr>
-                <td>
-                    <?php echo $hotel['name']; ?>
-                </td>
-                <td>
-                    <?php echo $hotel['description']; ?>
-                </td>
-                <td>
-                    <?php echo $hotel['parking'] ? 'Parcheggio disponibile' : 'Parcheggio non disponibile'; ?>
-                </td>
-                <td>
-                    <?php echo $hotel['vote']; ?>
-                </td>
-                <td>
-                    <?php echo $hotel['distance_to_center']; ?> km
-                </td>
-            </tr>
-        <?php } ?>
+    <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Parcheggio</th>
+                    <th scope="col">Voto</th>
+                    <th scope="col">Distanza dal centro</th>
+                </tr>
+            </thead>
+            <?php foreach ($hotels as $hotel) { ?>
+                <tr>
+                    <td>
+                        <?php echo $hotel['name']; ?>
+                    </td>
+                    <td>
+                        <?php echo $hotel['description']; ?>
+                    </td>
+                    <td>
+                        <?php echo $hotel['parking'] ? 'Parcheggio disponibile' : 'Parcheggio non disponibile'; ?>
+                    </td>
+                    <td>
+                        <?php echo $hotel['vote']; ?>
+                    </td>
+                    <td>
+                        <?php echo $hotel['distance_to_center']; ?> km
+                    </td>
+                </tr>
+            <?php } ?>
 
-    </table>
-
+        </table>
+    </div>
     <style>
         thead {
             background-color: #000;
             color: #fff;
+        }
+
+        .container {
+            min-height: 500px;
+            padding: 100px 0;
         }
     </style>
 
