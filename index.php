@@ -55,10 +55,11 @@ $hotels = [
 <body>
     <form action="./index.php" method="GET">
         <select name="parking">
-            <option value="true">Con Parcheggio</option>
-            <option value="false">Senza Parcheggio</option>
+            <option value="true" <?php if (isset($_GET['parking']) && $_GET['parking'] == 'true') {echo 'selected';} ?>> Con Parcheggio</option>
+            <option value="false" <?php if (isset($_GET['parking']) && $_GET['parking'] == 'false') {echo 'selected';} ?>> Senza Parcheggio</option>
         </select>
-        <input type="submit" value="Filtra" >
+
+        <input type="submit" value="Filtra">
     </form>
     <div class="container">
         <table class="table">
